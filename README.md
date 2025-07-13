@@ -36,13 +36,8 @@
     ```bash
     docker-compose up -d
     ```
-
-3. **의존성 설치**
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-4. **페이지 접속**
+    
+3. **페이지 접속**
     ```bash
     http://localhost:3000/
     ```
