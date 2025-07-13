@@ -32,8 +32,8 @@ export function Result() {
     const monthlyVolatility = Math.sqrt(variance);
     const annualizedVolatility = monthlyVolatility * Math.sqrt(12);
 
-    // Sharpe Ratio (무위험 수익률 3% 가정)
-    const riskFreeRate = 0.03;
+    // Sharpe Ratio (무위험 수익률 3.5% KOFR)
+    const riskFreeRate = 0.035;
     const sharpeRatio = annualizedVolatility > 0 ? (annualizedReturn - riskFreeRate) / annualizedVolatility : 0;
 
     // 최대 낙폭 계산
