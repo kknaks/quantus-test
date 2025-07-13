@@ -147,9 +147,9 @@ export function Backtest() {
         screening_criteria: {
           PER: [state.step5Data?.investmentAnalysis?.investment_zones.PER.lower_bound || 0, state.step5Data?.investmentAnalysis?.investment_zones.PER.mean || 0],
           PBR: [state.step5Data?.investmentAnalysis?.investment_zones.PBR.lower_bound || null, state.step5Data?.investmentAnalysis?.investment_zones.PBR.mean || null],
-          ROE: [state.step5Data?.investmentAnalysis?.investment_zones.ROE.mean || null, state.step5Data?.investmentAnalysis?.investment_zones.ROE.upper_bound || null],
-          ROA: [state.step5Data?.investmentAnalysis?.investment_zones.ROA.mean || null, state.step5Data?.investmentAnalysis?.investment_zones.ROA.upper_bound || null],
-          영업이익률: [state.step5Data?.investmentAnalysis?.investment_zones.영업이익률.mean || null, state.step5Data?.investmentAnalysis?.investment_zones.영업이익률.upper_bound || null],
+          ROE: [state.step5Data?.investmentAnalysis?.investment_zones.ROE.median || null, state.step5Data?.investmentAnalysis?.investment_zones.ROE.upper_bound || null],
+          ROA: [state.step5Data?.investmentAnalysis?.investment_zones.ROA.median || null, state.step5Data?.investmentAnalysis?.investment_zones.ROA.upper_bound || null],
+          영업이익률: [state.step5Data?.investmentAnalysis?.investment_zones.영업이익률.median || null, state.step5Data?.investmentAnalysis?.investment_zones.영업이익률.upper_bound || null],
           // 부채비율: [state.step5Data?.investmentAnalysis?.investment_zones.부채비율.lower_bound || null, state.step5Data?.investmentAnalysis?.investment_zones.부채비율.q1 || null]
           부채비율: [0, state.step5Data?.investmentAnalysis?.investment_zones.부채비율.q3 || null]
 
@@ -282,11 +282,11 @@ export function Backtest() {
                       case 'PBR':
                         return { start: 'lower_bound', end: 'mean' };
                       case 'ROE':
-                        return { start: 'mean', end: 'upper_bound' };
+                        return { start: 'median', end: 'upper_bound' };
                       case 'ROA':
-                        return { start: 'mean', end: 'upper_bound' };
+                        return { start: 'median', end: 'upper_bound' };
                       case '영업이익률':
-                        return { start: 'mean', end: 'upper_bound' };
+                        return { start: 'median', end: 'upper_bound' };
                       case '부채비율':
                         return { start: 'lower_bound', end: 'q3' };
                       default:

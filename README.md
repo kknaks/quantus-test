@@ -83,9 +83,9 @@
 - 투자지표 기준값 설정:
     > PER: lower_bound ~ mean (저평가 구간 선호)</br>
     > PBR: lower_bound ~ mean (저평가 구간 선호)</br>
-    > ROE: mean ~ upper_bound (고수익성 구간 선호)</br>
-    > ROA: mean ~ upper_bound (고수익성 구간 선호)</br>
-    > 영업이익률: mean ~ upper_bound (고수익성 구간 선호)</br>
+    > ROE: median ~ upper_bound (고수익성 구간 선호)</br>
+    > ROA: median ~ upper_bound (고수익성 구간 선호)</br>
+    > 영업이익률: median ~ upper_bound (고수익성 구간 선호)</br>
     > 부채비율: 0 ~ q3 (안전성 구간 선호)</br>
 
 ### 🎯 종목 추출 로직 설계
@@ -270,8 +270,7 @@ graph LR
 ### 2. 🔍 Stock Filter (종목 필터링)
 **파일**: `stock_filter.py`
 
-<img width="300" height="200" alt="Step 2: 거래량 분석" src="https://github-production-user-asset-6210df.s3.amazonaws.com/118641096/465769575-75268357-e3d1-49fc-baca-bad880d8a507.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250713%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250713T194024Z&X-Amz-Expires=300&X-Amz-Signature=8528878d37f6380efa61dd85577263ee0cbff7ef2c84ed4feb0981e3574a746a&X-Amz-SignedHeaders=host" />
-<img width="300" height="228" alt="Step 3: 재무제표 분석" src="https://github-production-user-asset-6210df.s3.amazonaws.com/118641096/465769638-9f1999af-f731-4b36-bd8c-eb61cfb496cc.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250713%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250713T194033Z&X-Amz-Expires=300&X-Amz-Signature=330724b790e6f2e3f2095c428bc0909da046d2e6200f46ec0b9f57ccda93d06a&X-Amz-SignedHeaders=host" />
+<img width="300" height="200" alt="Step 2: 거래량 분석" src="https://github-production-user-asset-6210df.s3.amazonaws.com/118641096/465769575-75268357-e3d1-49fc-baca-bad880d8a507.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250713%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250713T194024Z&X-Amz-Expires=300&X-Amz-Signature=8528878d37f6380efa61dd85577263ee0cbff7ef2c84ed4feb0981e3574a746a&X-Amz-SignedHeaders=host" /><img width="300" height="228" alt="Step 3: 재무제표 분석" src="https://github-production-user-asset-6210df.s3.amazonaws.com/118641096/465769638-9f1999af-f731-4b36-bd8c-eb61cfb496cc.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250713%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250713T194033Z&X-Amz-Expires=300&X-Amz-Signature=330724b790e6f2e3f2095c428bc0909da046d2e6200f46ec0b9f57ccda93d06a&X-Amz-SignedHeaders=host" />
 
 - **역할**: 수집된 주식 데이터의 필터링 및 분석
 - **주요 기능**:
@@ -306,8 +305,7 @@ graph LR
 
 ### 4. 📉 Investment Index (투자지표)
 **파일**: `invest_idx.py`
-<img width="300" height="200" alt="Step 5: 투자지표 생성" src="https://github-production-user-asset-6210df.s3.amazonaws.com/118641096/465769675-3066aa11-0605-404f-af6f-3103d698ed17.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250713%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250713T194055Z&X-Amz-Expires=300&X-Amz-Signature=b2e105efb9d0cead1057d790d59d1938931320d123eb1954a967e81befa4bb3b&X-Amz-SignedHeaders=host" />
-<img width="300" height="200" alt="Step 6: 투자지표 분석" src="https://github-production-user-asset-6210df.s3.amazonaws.com/118641096/465769693-bab09cdf-decd-43a7-9914-bb6723514490.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250713%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250713T194107Z&X-Amz-Expires=300&X-Amz-Signature=a60b5d080ce22e309dda25f57d76d6737af8811dba0a1ea2f82fece3a26a7239&X-Amz-SignedHeaders=host" />
+<img width="300" height="200" alt="Step 5: 투자지표 생성" src="https://github-production-user-asset-6210df.s3.amazonaws.com/118641096/465769675-3066aa11-0605-404f-af6f-3103d698ed17.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250713%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250713T194055Z&X-Amz-Expires=300&X-Amz-Signature=b2e105efb9d0cead1057d790d59d1938931320d123eb1954a967e81befa4bb3b&X-Amz-SignedHeaders=host" /><img width="300" height="200" alt="Step 6: 투자지표 분석" src="https://github-production-user-asset-6210df.s3.amazonaws.com/118641096/465769693-bab09cdf-decd-43a7-9914-bb6723514490.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250713%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250713T194107Z&X-Amz-Expires=300&X-Amz-Signature=a60b5d080ce22e309dda25f57d76d6737af8811dba0a1ea2f82fece3a26a7239&X-Amz-SignedHeaders=host" />
 
 - **역할**: 주가와 재무제표를 결합한 투자지표 계산
 - **주요 기능**:
@@ -317,9 +315,7 @@ graph LR
 
 ### 5. 🧪 Backtest (백테스트)
 **파일**: `back_test.py`
-<img width="300" height="200" alt="누적 수익률 차트" src="https://github-production-user-asset-6210df.s3.amazonaws.com/118641096/465769891-5d1f947d-49bb-43b3-afa1-faf5d5acc487.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250713%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250713T194145Z&X-Amz-Expires=300&X-Amz-Signature=d73b4452c28f7cf8db6050125b208a989d2d82cd5f37e470190ea7c6ac0cc729&X-Amz-SignedHeaders=host" />
-
-<img width="300" height="200" alt="월별 포트폴리오 구성" src="https://github-production-user-asset-6210df.s3.amazonaws.com/118641096/465769951-97902cbc-6b89-42fa-b31e-edf9b03159b1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250713%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250713T194153Z&X-Amz-Expires=300&X-Amz-Signature=e7409570470cd40a3c5d3cb6d7e145683789998c8db9ea066f3783627f8d622a&X-Amz-SignedHeaders=host" />
+<img width="300" height="200" alt="누적 수익률 차트" src="https://github-production-user-asset-6210df.s3.amazonaws.com/118641096/465769891-5d1f947d-49bb-43b3-afa1-faf5d5acc487.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250713%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250713T194145Z&X-Amz-Expires=300&X-Amz-Signature=d73b4452c28f7cf8db6050125b208a989d2d82cd5f37e470190ea7c6ac0cc729&X-Amz-SignedHeaders=host" /><img width="300" height="200" alt="월별 포트폴리오 구성" src="https://github-production-user-asset-6210df.s3.amazonaws.com/118641096/465769951-97902cbc-6b89-42fa-b31e-edf9b03159b1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250713%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250713T194153Z&X-Amz-Expires=300&X-Amz-Signature=e7409570470cd40a3c5d3cb6d7e145683789998c8db9ea066f3783627f8d622a&X-Amz-SignedHeaders=host" />
 
 - **역할**: 투자 전략의 성과 검증 및 리스크 분석
 - **주요 기능**:
