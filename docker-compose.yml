@@ -1,0 +1,33 @@
+services:
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    environment:
+      - ENVIRONMENT=local
+      - FRONTEND_HOST=http://frontend:3000 # 이 환경변수는 Docker 내부 통신용으로 의미 있음
+    networks:
+      - main-network # <-- 여기를 하나의 네트워크로 변경
+
+  # Next.js frontend service (Production)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_BASE_URL=http://localhost:8000/api/v1 # 브라우저에서 접근할 수 있는 URL로 변경
+      - NODE_ENV=production
+    depends_on:
+      - api
+    networks:
+      - main-network # <-- 여기를 하나의 네트워크로 변경
+
+networks:
+  main-network: # <-- 새로운 하나의 네트워크 정의
+    name: quantus-main-network # 네트워크 이름 지정
