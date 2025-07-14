@@ -16,16 +16,45 @@
 ## 🎯 프로젝트 개요
 
 ### 주요 기능
-- 📊 **주식 데이터 수집**: KRX API를 통한 실시간 주식 데이터 수집
-- 🔍 **종목 필터링**: ETF, 우선주 등 다양한 조건의 종목 필터링
-- 📈 **재무제표 분석**: DART API를 통한 기업 재무정보 수집 및 분석
-- 📉 **투자지표 계산**: PER, PBR, ROE 등 핵심 투자지표 산출
-- 🧪 **백테스트**: 월간 리밸런싱 기반 포트폴리오 성과 검증
+<div style="display: flex; flex-wrap: wrap; gap: 20px;">
+  <div style="flex: 1; min-width: 300px;">
+    <h4>📊 주식 데이터 수집</h4>
+    <p>KRX API를 통한 실시간 주식 데이터 수집</p>
+    <img src="./image/데이터수집.png" alt="데이터수집" style="width: 100%; height: auto;">
+  </div>
+  <div style="flex: 1; min-width: 300px;">
+    <h4>🔍 종목 필터링</h4>
+    <p>ETF, 우선주 등 다양한 조건의 종목 필터링</p>
+    <img src="./image/종목필터링.png" alt="종목필터링" style="width: 100%; height: auto;">
+  </div>
+  <div style="flex: 1; min-width: 300px;">
+    <h4>🔍 후보군 선정</h4>
+    <p>데이터 분석을 위한 주식 종목 후보 선정</p>
+    <img src="./image/후보군선정.png" alt="후보군선정" style="width: 100%; height: auto;">
+  </div>
+  <div style="flex: 1; min-width: 300px;">
+    <h4>📈 재무제표 분석</h4>
+    <p>DART API를 통한 기업 재무정보 수집 및 분석 (100개 추천)</p>
+    <img src="./image/재무제표분석.png" alt="재무제표분석" style="width: 100%; height: auto;">
+  </div>
+  <div style="flex: 1; min-width: 300px;">
+    <h4>📉 투자지표 계산</h4>
+    <p>PER, PBR, ROE 등 핵심 투자지표 산출 (생성할 후보수 : 모집단, 테스트할 종목 : 구성 포트폴리오 최대 종목수)</p>
+    <img src="./image/투자지표생성.png" alt="투자지표생성" style="width: 100%; height: auto;">
+    <img src="./image/투자지표생성2.png" alt="투자지표생성2" style="width: 100%; height: auto;">
+  </div>
+  <div style="flex: 1; min-width: 300px;">
+    <h4>🧪 백테스트</h4>
+    <p>월간 리밸런싱 기반 포트폴리오 성과 검증</p>
+    <img src="./image/백테스트실행.png" alt="백테스트실행" style="width: 100%; height: auto;">
+    <img src="./image/백테스트결과.png" alt="백테스트결과" style="width: 100%; height: auto;">
+  </div>
+</div>
 
 
 ## 🚀 시작하기
 ### 설치 및 실행
-배포서버 : https://quantus.kknaks.site/
+
 1. **저장소 클론**
     ```bash
     git clone https://github.com/kknaks/quantus-test.git
@@ -41,6 +70,12 @@
     ```bash
     http://localhost:3000/
     ```
+
+4. **에러시 배포서버 활용**
+    ```bash
+    https://quantus.kknaks.site/
+    ```
+    - !local환경 보다 속도 저하
 
 ## 💡 투자전략 수립
 - [📊 데이터 분석 및 전략 상세 보고서](./report.ipynb)
