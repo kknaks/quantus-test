@@ -17,18 +17,18 @@
 
 ### 주요 기능
 - 📊 **주식 데이터 수집**: KRX API를 통한 실시간 주식 데이터 수집
-<img src="./image/데이터수집.png" width="30%">
+<img src="./image/데이터수집.png" width="50%">
 - 🔍 **종목 필터링**: ETF, 우선주 등 다양한 조건의 종목 필터링
-<img src="./image/종목필터링.png" width="30%">
+<img src="./image/종목필터링.png" width="50%">
 - 🔍 **후보군 선정**: 데이터 분석을 위한 주식 종목 후보 선정
-<img src="./image/후보군선정.png" width="30%">
+<img src="./image/후보군선정.png" width="50%">
 - 📈 **재무제표 분석**: DART API를 통한 기업 재무정보 수집 및 분석 (100개 추천)
-<img src="./image/재무제표분석.png" width="30%">
+<img src="./image/재무제표분석.png" width="50%">
 - 📉 **투자지표 계산**: PER, PBR, ROE 등 핵심 투자지표 산출
  -(생성할 후보수 : 모집단, 테스트할 종목(30개 이상 추천) : 구성 포트폴리오 최대 종목수(10개이상))
-<img src="./image/투자지표생성.png" width="30%"> <img src="./image/투자지표생성2.png" width="30%">
+<img src="./image/투자지표생성.png" width="50%"> <img src="./image/투자지표생성2.png" width="50%">
 - 🧪 **백테스트**: 월간 리밸런싱 기반 포트폴리오 성과 검증
-<img src="./image/백테스트실행.png" width="30%"> <img src="./image/백테스트결과.png" width="30%">
+<img src="./image/백테스트실행.png" width="50%"> <img src="./image/백테스트결과.png" width="50%">
 
 
 ## 🚀 시작하기
