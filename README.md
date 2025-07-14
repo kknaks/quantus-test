@@ -25,7 +25,7 @@
 
 ## 🚀 시작하기
 ### 설치 및 실행
-배포서버 : https://quantus.kknaks.site/
+
 1. **저장소 클론**
     ```bash
     git clone https://github.com/kknaks/quantus-test.git
@@ -41,9 +41,13 @@
     ```bash
     http://localhost:3000/
     ```
+4. **오류시 배포서버 접속**
+- 배포서버 : https://quantus.kknaks.site/
+- 속도 저하
 
 ## 💡 투자전략 수립
 - [📊 데이터 분석 및 전략 상세 보고서](./report.ipynb)
+- [📊 참고 보고서](https://github.com/kknaks/recommend_stock/blob/main/Recommend_stock/final_report.ipynb)
 ### 📋 전략 수립 단계
 #### Step 1: 종목 수집 및 필터링
 
