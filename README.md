@@ -70,6 +70,9 @@
     ```bash
     http://localhost:3000/
     ```
+4. **오류시 배포서버 접속**
+- 배포서버 : https://quantus.kknaks.site/
+- 속도 저하
 
 4. **에러시 배포서버 활용**
     ```bash
@@ -79,6 +82,7 @@
 
 ## 💡 투자전략 수립
 - [📊 데이터 분석 및 전략 상세 보고서](./report.ipynb)
+- [📊 참고 보고서](https://github.com/kknaks/recommend_stock/blob/main/Recommend_stock/final_report.ipynb)
 ### 📋 전략 수립 단계
 #### Step 1: 종목 수집 및 필터링
 
